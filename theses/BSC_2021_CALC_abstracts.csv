@@ -1,0 +1,281 @@
+author,title,abstract
+Benedek Szabolcs,Travel companion search app,"The web application built for the exam has been named „The Ride” and the purpose behind
+is to create a well designed and responsive platform for people who want to travel, commute and
+explore. The inspiration behind the idea was the fact that there are a number of Facebook groups
+meant to simplify the search for ride sharing, however, there are not that many individual
+applications built for this purpose. This was the source of inspiration behind my web application.
+An important factor for the project was that it must provide an added value compared to
+similar solutions, for example Blablacar that is currently available in our country. Facebook groups
+are more widespread compared to other ride sharing applications due to the personal aspect of the
+social media platform. Blablacar is an international company whose application is used in multiple
+countries, which is the reason why building a community is more difficult there. „The Ride”, on
+the other hand, is only available for regions in Romania and Hungary, which meant to build a
+stronger, more familiar connection with the local users.
+My goal for the application was to be able to create the entire route when adding a new
+ride, as well as to provide a breakdown of locations that the ride is passing through. It’s crucial
+that the users are provided with good recommendations for rides. This functionality is built with
+the help of Google Maps APIs which will be discussed further in the exam paper."
+Blenesi Aron,Sapi3D tour – 3D model,"The technologies we use in our everyday lives make our lives a lot easier: with a simple mobile
+device, we can pay bills or even make a video call while we are on the train. In addition to these, new
+demands have emerged, such as getting through the virtual world to places we have never been to.
+
+In this dissertation, we present the creation of a complete 3D model of the main building of the
+Sapientia EMTE, which also includes a web UI presented in another dissertation, thus creating a
+virtual tour of the university. The developed model is incorporated into the web application as a static
+element. The structural structure of the model was based on the real layout plans and architectural
+plans of the main building. In contrast to series of photograph based approaches, this method allows
+the user to better perceive the spatial location of elements.
+
+The model was created using Blender, an open source modeling software. The developed model
+allows us to reach any point, from any angle, thus giving the user the opportunity to navigate freely. At
+the same time, we have planned different routes between the most important points of the university,
+which help us to get to the secretariat, departments or laboratory rooms, more easily. We also placed a
+virtual billboard at certain points in the model. Information about various universities and events can
+be displayed on these."
+Bustya Balazs,Implementation of artificial neural networks by high-level synthesis,"Artificial neural networks have gained great popularity for their accuracy in image processing,
+data mining, classification tasks, and decision-making systems in which previously only humans
+were able to make the right decisions. However, neural networks cannot yet completely replace
+humans, because humans design them depending on the given task. Hardware accelerators are
+used to increase the performance of neural networks. There have been plenty of studies on
+hardware accelerators in recent years. One of the options are FPGA circuits. The main advantages
+of FPGAs used for hardware acceleration are parallelism, low power consumption and flexibility.
+Implementing neural networks on FPGA is a very time consuming and difficult task, that can only
+be performed by experienced professionals. The framework we have developed provides solution
+to this problem. The purpose of the framework is to accelerate and facilitate the implementation
+of neural networks ""running"" on an FPGA, to accelerate neural networks, to study optimization
+options in terms of size and performance, and to automate the programming process. The
+parameterizable neural network models, implemented by the high-level synthesis discussed in the
+dissertation, serve as the basis of the framework, that generates the code of the neural networks
+modelled in C ++ optimized by directives. The Vivado HLS tool generates the IP core of the neural
+network from this code. It automatically integrates into a system built in Vivado. The Vivado tool
+generates the bit file needed to program the FPGA and programs the circuit. The paper includes
+the implementation of a multilayer perceptron neural network and a radial basis function network,
+hardware implementations of nonlinear activation functions, comparison of fixed-point and
+floating-point number representations."
+Dobri Ervin,GESTURE-CONTROLLED EMG STRAP INTERACTIVE USE FOR FLATFOOT TREATMENT,"Flat foot is one of the most common orthopedic problems, which in the absence of gradual treatment
+and correction can also result in serious health problems later on. This unpleasant orthopedic lesion
+can be treated efficiently with persistent exercise of the foot, with physiotherapy.
+
+Unfortunately, most children are bored with the monotony of physiotherapy, in order to crea-
+te consistent perseverance they need the constant supervision, persuasion and encouragement of the
+
+physiotherapist and parents. On the other hand, children love to play, so putting physiotherapy in a
+playful framework can make the rehabilitation process easier for everyone and increase its efficiency.
+
+In the dissertation I present a self-developed “serious game” framework, with the help of which vi-
+deo games can be controlled with the physiotherapy exercises used in the treatment of the flat foot: the
+
+games are controlled by the movement of the foot instead of pressing a key/button. The system detects
+the exercises in (near) real time from signals summing up the muscle activity provided by the EMG
+(Electromyography) band placed on the child’s leg, and then simulates the keystroke corresponding to
+the exercise in the currently running game, thereby controlling it."
+Gall Janos,Design and development of a RISC processor with FPGA circuit testing,"The dissertation presents a processor designed and implemented for an FPGA circuit, which I modeled
+on the Xilinx PicoBlaze processor. In this paper, I present the steps of design, construction, and testing.
+Nowadays, computer technology is developing extremely fast, with redesigning and optimizing
+various elements. The processor is one of the most important components of a computer that executes
+instructions and controls the entire system.
+There are several types of processor architectures, such as Harvard and Neumann architectures. I
+built the processor presented in my dissertation on the principles of Harvard architecture. However,
+I also used a two-phase piping to make better use of the processor. This allows you to perform
+operations much faster.
+During the design of the processor, I also took into account the RISC design strategy, the essence
+of which is that the processor has a small number and simple instructions. This makes planning easier
+and faster.
+
+The aim of the dissertation is to compare the two processors, PicoBlaze and the processor I de-
+signed and developed. In terms of computational performance and process control performance. The
+
+tests performed can be divided into two groups, arithmetic tests and analog signal sampling tests.
+During arithmetic tests, I examined Factorization and Fibonacci number sequence generation for
+both processors. During analog signal sampling, processors had to reproduce sine and square signals
+of different frequencies."
+Hammas Attila,Framework for implementing artificial neural networks on reconfigurable digital circuits,"Artificial neural networks (ANN) are widely used in solving problems like image processing,
+data mining, or classification. Hardware accelerators are used for increasing the performance
+
+and efficiency of neural networks. An option for implementing such an accelerator is an FPGA-
+based system, although developing neural networks for FPGAs is very time-consuming and
+
+requires professionals to do it. In this article, we try to tackle this problem by creating a
+framework that should speed up the process. At the same time, we will take a look at some
+efficiency optimization and speed-up options as well. The framework is written in Python and
+generates a C++ code whit HLS directives. This code can be compiled by Vivado HLS into a
+hardware descriptive language and packaged as an IP. The Vivado tool can generate a bit file
+that can be uploaded onto the FPGA device.
+Among other things, the dissertation presents a comparison of different approximations of
+nonlinear transformations (base functions and activation functions) in terms of accuracy,
+required resource, and delay needed for evaluating the transformation. The generated neural
+network module was integrated into a system, that we developed. Using that system, we tested
+the neural network module and compared it with the models implemented in Python."
+Kalith Norbert,Phone-based attendance,"The theme of my thesis is the design and implementation of a progressive web application to
+help teachers and students manage and track attendance.
+Attendance management is a frequently recurring activity in order to allow instructors to keep
+track of students' attendance in class. Most teachers use traditional methods to record attendance.
+The main drawback of these methods is that they are time-consuming processes. By using digital
+tools, the time spent on this activity can be minimized and attendance recording is more
+transparent for both teachers and students.
+The aim of this thesis was to design and build an application that would facilitate and speed up
+the process of attendance management by taking advantage of the benefits of technology. To
+produce the software, I tested and used a new software development methodology called
+Progressive Web Application. I created a platform-independent application that uses the Web
+
+NFC API technology to manage presences quickly and reliably, and I also created an Android-
+based native application that uses Bluetooth technology in case the user's mobile device is not
+
+capable of using NFC technology.
+The result was a multi-platform progressive web application and a native application. Both
+software, taking into account the epidemiological situation, provide a contactless presence
+tracking and speed up and facilitate the management and tracking of the presence."
+Magyarosi Roland,Personal Assistant – DesktopApp,"Nowadays less and less attention is given to development and modernizing of Desktop
+applications over web and mobile. Although Desktop applications have an important role in the
+lives of users and IT workers. With the quick evolution of mobile phones practically everything
+is possible using the smartphone in our pocket, but it couldn’t and probably will not be able to
+surpass computers for a while.
+The dissertation focuses on a system designed for personal computers or laptops that
+perfectly meets the role of a virtual assistant in our life. The IPA (intelligent personal assistant)
+
+softwares help the uses perform easy, but frequent tasks like browsing the internet, sending e-
+mails and swiftly opening applications while the input is not codes or signals, but simply a
+
+human voice. Presumably this is the reason for the success of this science that has grown into an
+industry.
+Virtual assistants are the blessing of the 21st century, but their history dates back to 1920.
+Every assistant is different, but their purpose is the same: serving the user. In our case a user is
+person in front of a computer whose job Sapientia Sarah tries to make easier, with performing
+simple, but frequent commands. This technology is accessible on both smartphones, computers
+and recently in household appliances and cars as well.
+In my dissertation I studied desktop applications and development of these, voice
+recognition, executing voice commands and the structure, use and development of virtual
+assistants. Keywords: virtual assistant, desktop application, user, technology"
+Nagy-Serban Tunde,Sapi3D tour – UI,"This disertation presents a web application, which includes the 3D virtual tour of Sapientia Hungarian
+University of Transilvania, Faculty of Tehnical and Human Sciences, from Târgu Mures,
+.
+
+Nowadays, people in big part of the day are in the influence of digitalization. Most of the people
+has at least a smatphone, a pc or a laptop and with these also has the connection to the internet, which
+gives infinite possibilities.
+Digitalization introduces a lot of good features for humanity. Problems can be solved with using
+the internet and a digital device, for example: paying bills, keeping the relation with relatives and not
+least with the help of the virtual tours, people can reach places, where they never could be.
+This dissertation it is about a web application, which uses and displays a 3D model from the
+building of the university, creating a virtual tour of it. To this tour can attend anyone and with this,
+the posibility is given to have a look inside the building. Beside this has an informational purpose,
+
+because the application shows a lot of information about the university, for example: events (Sapi-
+Line-Tracer), or the name and the contact of the specialist coordinators.
+
+The application has a feature with the name “Take me!”, which takes the user to the selected place
+and also shows the route to reach there, giving a lot of help for visitors. Beside this the user has the
+possibility to walk anywhere inside the model and with this the user can discover the complete model.
+The system was made on web interface and thanks to this it can be used almost on all the devices
+like on pc, laptop and also on smartphone. The application can give a lot of help for the new students
+and also for the students and teachers who are only in visit to familiarize in a faster way with the main
+building of the university."
+Palfi Szabolcs,Price Monitor,"These days the majority of shopping is done online. There are tons of online shopping websites, with
+some kind of big sale going on almost all the time, however these sales are most of the time made up.
+These false sales can be spotted only if you follow a products price daily, for a longer period of time
+which is a repetitive and time-consuming process. The same can be said when you’re interested in
+purchasing some products but you’re not quite decided yet, so you want to wait for the price to drop.
+These gave the inspiration for developing our system.
+
+In this paper we’ll present a price monitoring system which automates the process described earli-
+er. At predefined moments the system wakes up and scrapes publicly available data from the Internet,
+
+which are than saved. The user has the opportunity to add products to his list, for them to be followed,
+and can view the price change on a chart. All this can be done from a Chrome browser extension or
+a mobile application built with Flutter. The so-called heart of the system is a python script which is
+responsible for the mining of the data, periodically updating the prices and pushing new products into
+the database. All this is done while respecting all moral and legal boundaries. All of our data is stored
+in a Realtime Database provided by Firebase, which turned out to be perfect for our application.
+
+After months of gathering data, while using the system, we analyzed it and made a few conclu-
+sions. We saw multiple patterns emerging from the price changes but there is not one that matches
+
+every product. There were many scams regarding prices, especially during Black Friday but there we-
+re also real and significant price drops as well. After using the system for a longer period of time we
+
+can say that a software like this helps the buyers in making a purchase decision, by providing useful
+data in a easy to read form."
+Simo Zsuzsa,"Remote-controlled, portable mechanical ventilator to assist patients with respiratory problems","Due to the lung damage caused by the epidemics, the need for high-efficiency, mobile
+ventilators that isolate operating personnel from the patient is growing worldwide. The aim is to
+develop a complementary system for remote patient monitoring and controlling which can act
+fully as a noninvasive artificial respiration assistant that represents a new approach in the field of
+mechanical ventilators. We have combined a completely new concept ventilation mechanism
+with a modern ESP32 microcontroller-based control system and a program installed on a mobile
+graphical user interface that allows these machines to be easily carried, operated and controlled,
+while also providing closed-loop breath control. Two-way, remote monitoring and control based
+on Internet of Things (IoT) technology allows an authorized physician connected to a wireless
+network to monitor respiratory parameters and adjust settings in real time, track multiple patients
+simultaneously, or even make clinical decisions,without having to come into direct contact with
+the device or the patient.
+The parameters controlled and regulated by our machine, as well as their minimum and
+maximum limits, comply with the RMVS001 regulations of the international institute Medicines
+& Healthcare Products Regulatory Agency."
+Solyom Botond-Ors,Android phone contact tracking apps,"My license thesis aim is to realize an application, which is able to save my appointments,
+back to a specific time limit. In our days the concept of security it becomes more and more
+important in every area of our life, therefore the preservation of this, takes precedence keeping our
+human life.
+The acceleration of the world, involves the increase of meetings and contacts between
+people and the regular formation of this. An exponential increase of these contacts resulting from
+these meetings becomes a defining motive of our accelerated world. Unfortunately, in some cases
+it creates a negative effect in our lives, it can prevent the opportunity of preserving the security.
+The frequently encounters, the multitude of contacts between people, in some cases can be a threat
+to our heath and the safety of our material assets.
+During the creation of my license thesis, my goal was the implementation of an application
+which, with the help of Bluetooth technology, can follow where and with whom we meet and
+pursues a certain time limit, which we are spending with a certain person. If it is necessary warns
+the users about a potential contact that could pose a danger of their safety.
+The application was successfully implemented in the Android development environment,
+with the help of Bluetooth technology integrated in the smartphones.
+As a result, we get a phone application running on an Android operating system which can
+be used in case of pandemic, or in any case when is required the contact research, but it can also
+be used even for personal reason for the tracking of our own movements and meetings."
+Szasz Arnold-Levente,Stroke Monitor,"Today, thanks to technological breakthroughs, mobile phones have a computing capacity
+unimaginable in the past. In addition to phone calls and messaging, these devices have many new
+features. To achieve user experience at the highest level, they need a lot of sensors and
+communication modules. In addition, phones can be equipped with various accessories associated
+with new sensors, making it possible to continuously monitor vital signs.
+The purpose of this diploma work is to develop a system that would benefit from the
+possibilities offered by sensors. The Stroke Monitor application includes two different software,
+which consists of a telephone application and a smartwatch application, their interaction allowing
+the user to monitor their heart rate even outside the hospital. The purpose of monitoring is to inform
+the user and the contact person in case of a possible risk of stroke which is implemented based on
+the data provided by the smartwatch and processed by the telephone application. It plays an
+important role for vulnerable users, because early medical emergency measures reduce the
+aftermath of stroke. The telephone application is also able to display various graphs, determine the
+risk score, provide daily advice to prevent the risk of stroke. During the development of the system,
+we used flutter technology, so the application is platform independent.
+The diploma thesis includes the definition of stroke, and it is recognition based on heart
+rate, design, implementation and development of telephone and smartwatch applications, as well
+as testing the system in real conditions."
+Udvari Balazs,Class Response System,"The main subject of my thesis are Class Response Systems, software applications created
+in order to help real time teaching methods. During the last years one of my main interest was the
+transformation of high school or university lectures by introducing interactivity and creating a
+better learning experience for the students. Consequently, my scope was the creation of a freely
+usable, low cost, platform independent CRS application, usable during traditional and online
+classes also. Creating the application, my long distance goal is to measure the efficiency of
+classroom teaching. Nowadays educational institutions frequently face problems caused by the
+distraction of students attention during classes by Internet connected smart devices. But smart
+devices, like mobile phones owned by almost all students could be used also for raising the
+efficiency of understanding during classes. Here are CRS systems coming in. In my thesis I present
+the basic concepts of CRS applications, compare some of widely used CRS systems, afterwards I
+present the project phases of my own CRS system, including testing and it’s usage in schools. My
+CRS application, called answeRS is a Node.js based web application which includes the basic
+functionalities of a CRS methods. The application assures teachers to display question queues
+during classes in real time, student responses are collected by using their mobile phones. Teachers
+can evaluate responses instantly, and consider the result for the next part of the lecture. Testing of
+the application with multiple users was made under real online condition and requirements were
+fulfilled."
+Ujfalvi Csongor-Robert,SYSTEM FOR VOLUMETRIC VISUALIZATION OF MEDICAL IMAGING DATA,"Even today deaths caused by brain tumors are in the scale of hundreds of thousands globally.
+Thanks to the rapid improvement of medical sciences and other branches of science nowadays
+there are numerous different systems helping medical professionals to diagnose brain tumors
+faster than before they have started using them. After the diagnosis, on average brain tumor
+patients live only a few more months than a year, so it’s essential to accelerate the process of
+diagnosing the tumors to start treating the patients before it’s too late.
+The topic of my thesis is a software that makes the development and testing of algorithms
+which are segmenting and mapping brain tumors from volumetric MRI data. The application is
+able to display in 4K resolution the segmented and mapped brain records alongside with the key
+indicators, results and statistical data on screen. Also it can store these data in a database and
+make it readily available to query it later for future uses.
+During the process of designing the software I’ve used many software design patterns and
+principles. While developing the application I’ve used many open source and free Microsoft
+products, including frameworks, developer tools and libraries."

@@ -1,0 +1,267 @@
+author,title,abstract
+Gergely Zsolt,Uniscout: Mobile app for organizing Doors Open Days," The topic of my thesis is the design and implementatio n of a system that makes the management  of events of university open days easier and more transparent for both the organizers and participants.   University open days are an annual event aimed at promoting the university among high school  students and provid ing insight into its operation for those interested. This is an extremely important  process because an outsider can really only get a deeper look into university life here before deciding  to apply. There are several tasks involved in organizing an event, s uch as managing information  related to the event and participants, which are slow and cumbersome to solve with traditional  methods, hence the need for a system that makes the whole process more effortless and faster.   The aim of my thesis is to create a sys tem that offers solutions to the aforementioned problems,  using the advantages of two modern frameworks. My system makes it more accessible to transfer  information related to events, save participant related data, and create statistics from the existing  dataset for the organizers.   The system consists of three parts. I implemented the mobile application using the Flutter  framework, which must be installed on users' phones and is platform "
+Denes Lorand,Protein classification with Markov Clustering," A significant proportion of biological phenomena can be traced back to genetics, which is based on gene sequences. Decoding these gene sequences represents a substantial challenge in the field of biological sciences. According to a bold estimate, this task could potentially engage the scientific community for the next five hundred years.  The aim of my thesis is to implement a simple gene sequence classification algorithm and integrate this algorithm into a software, equipped with a graphical user interface. This may represent a small step toward the solution of decoding gene sequences.  This implemented algorithm performs classification based on similarity data from gene sequence pairs within a larger sequence dataset. This methodology allows us to  simultaneously process large amount of protein sequences and grouping these sequences based on their similarity. This is made possible by working with sparse matrices which eliminates unnecessary operations, such as addition and multiplication with zero. At the same time, this method has significant memory efficiency, because we only store the none zero values.  This method treats the input sequence dataset as a graph. Each protein is assigned a node within the graph, and the initial edges between the nodes are received as input data from the SCOP95 database. These values were created using the BLAST algorithm and they’re form a sparse matrix. This algorithm is a modified form of Markov clustering, in which the two main operations, inflation and expansion, work against each other. Connected subgraphs remaining in the equilibrium state, defining the final result of the clustering. The main parameter of the algorithm is the inflation rate, which determines how much the algorithm separates groups from each other.  The graphical user interface provides the opportunity to perform the classification on the 11,944"
+Katona Andrea Izabella,Use of voice control for mobile robots ,"People have always been interested in robots. We often meet robots, not only in science,
+but also in various areas of life. Although we used to think of human-robot interaction as science
+fiction (e.g. R2D2 from the movie Star Wars), nowadays it has become more and more a reality.
+Since people's natural communication is through speech, it is not difficult to imagine
+control through speech. Voice control is an exciting topic that allows robots to be controlled by
+voice commands. There are different methods for this, however, research is still ongoing in the
+field. This branch of science can lead to many exciting realizations and applications in all areas of
+life (science, entertainment, industry, etc.).
+The purpose of my work is to present the advantages and potential of voice control in
+controlling mobile robots. To this end, I will present an implementation that allows controlling a
+robot in a simulation environment as well as a physical robot with voice commands. Further on,
+you can read about the detailed implementation, the technologies used, as well as the results of the
+measurements, conclusions and further development possibilities."
+Kormoci Csaba,Decentralized stock exchange," As cryptocurrencies have become more and more widespread these days, cryptocurrency  sites and applications have become more popular. It is vital to have tools and platforms that  allow trading cryptocurrencies. In the crypto world, these are the decentralised exchanges. These  are platforms or applications that allow cryptocurrencies to be exchanged directly between each  other without the need for an intermediary. In addition, decentralised exchanges provide a way to  supply liquidity to the system. At the same time, they also allow liquidity to be withdrawn.  Based on this information, the aim of my thesis is to develop a mobile application that  allows users to exchange cryptocurrencies on both Android and iOS. Note that we do not allow  users to buy cryptocurrencies, only to exchange them.   In creating my thesis, I needed to learn about the technologies, different principles and  solutions that make a decentralised exchange possible. These included different blockchain  technologies, smart contracts and the main functionalities of decentralised exchanges."
+Kristóf István Levente,Visualizing Recursivity: the step method," Nowadays, IT has become  one of the fastest growing industries. We often hear about new  technologies every month or even every week. For recent graduates from academic institutions to  succeed in such a dynamic and  fast growing environment, it is essential that they have mastered  the basics of programming during their studies. One of the basic concepts that can give  university students a lot of headaches is recursion.   The aim of this paper and the accompanying visualisation software is to serve as an educational  tool for those who wish to gain a deeper understanding of the phenomenon of recursion. The user  is given the opportunity to visualise different recursive functions using the software. Unlike the  usual visualization tools, this application uses the method of stairs to visuali ze the depth of  recursion.    The presented software can be useful not only for students who want to learn, but also for  all those who want to explore the phenomenon of recursion by observing interesting patterns in  visualizations."
+Ambrus Barna,Smart roller indicator," This paper describes in detail a system and its architecture for managing direction change and  braking signals on scooters and bicycle s, using a sensor with an accelerometer and gyroscope on  the back of the hand. The project aims to provide a solution for direction signals on the crank  without removing the hand from the handlebars, thus avoiding the resulting accidents. The user is  able to indicate a change of direction by gestures such as turning the hand sideways, so that it is  not necessary to take the hand completely off the steering wheel, thus maintaining the balance of  the vehicle. Brake signals are automatic as a result of acceler ation sensing. The system uses two  microcontrollers (ESP32 and ESP8266), one of which processes the sensor data, while the other  runs a web server and lights the corresponding LEDs. The web server is responsible for the  communication between the microcontr ollers and also runs a web page that acts as a user interface.  On the web page, active signals such as turn signals and brake signals are displayed and can be  switched on and off. Communication between the different components is wireless using WiFi  techno logy."
+Bacs Bernat,Design and development of a smart home control system," This thesis presents the implementation of a smart home control system. The system mainly  performs home automation tasks such as temperature control, watering of plants and automatic  movement of shutter , thus facilitating the user's daily life. Nowadays, IoT devices are playing an  increasingly important role for people, and we can't imagine our lives without them. Since most   people have an internet connection at home, building such an IoT system is easier, cheaper and  more efficient because there is no need for wires to communicate between devices.    The system I developed and built consists of a central computer with a touch screen display  connected to it, where you can follow and intervene in the automation processes, you can see  statistics about the temperature in the room, for example. Several sensors are connected to this  central part via Bluetooth or MQTT communication pr otocols, which provide data and perform  the automation tasks. In my thesis I document the design and construction of this system in detail,  illustrating each part with diagrams."
+Bako Jozsef,Design and implementation of a hot object tracking robot," Measuring temperature has always played an important role in human life due to the curiosity of it’s nature. With the advance of the world and the temperatures measuring technologies, this task has become a trivial problem, regardless of what we measure the temperature of.  The scope of this project is to create a heat follower robot and a mobile application for controlling it, which identifies the temperature extremes in a closed area and approaches it, as well. As for the app, my aim is to establish a Bluetooth connection between this and the robot and show a picture of it’s view to the user. Also, I want it to make manual control possible."
+Bálint Adolf,Documenting backgammon from video files,"The topic of my paper is documenting and tracking the game of backgammon game in
+which I dealt with game programming, image processing, and real-time game tracking of game
+progres. Backgammon and image processing cover two areas of particular interest to me.. The
+Romanian Backgammon Federation organizes various national and international competitions,
+where tracking and automatic arbitration are of particular interest.
+
+The Python programming language allows for the creation of virtual versions of backgammon,
+which gives the game a new dimension by interactively playing it on the computer. The goal of
+game programming was to enable two players to compete against each other on the computer
+and record the game for later replay.
+
+OpenCV (Open Source Computer Vision Library) is a popular library used in image processing.
+With its help, the computer can recognize shapes and process images, allowing for capturing the
+sequential playing positions. My goal in the field of image processing, was to extract still frames
+from a video and identify the position of pieces, thus tracking the game's progress.
+
+Therefore, my objective was to create an application by combining Python and OpenCV that
+automatically evaluates the board game.The software to be made must recognize the positions of
+pieces and tracks the players' moves, allowing for virtual gameplay between two individuals."
+Bocsárdi András,CLASSIFICATION OF BRAIN TUMORS WITH CONVOLUTIONAL NEURAL NETWORKS,"The topic of this thesis is the classification of brain tumours using convolutional
+neural networks. In the first half of the paper, I will describe neural networks based
+on the literature, starting from simple M-P neurons to convolutional neural
+networks, covering their structure and their training. In the second half of the
+paper, I present three models I developed that classified brain tumours into four
+groups with an accuracy of over 85%. The first model I implemented was a simple
+convolutional neural network. With the second model I achieved only moderate
+performance improvements by changing the architecture and preventing
+overfitting. For both models I tuned the hyperparameters. The best performing
+model was the third one, implemented with transfer learning and using VGG16 as
+the base model. This model achieved the best accuracy (96%). In developing the
+three models, I used methods to continuously improve the performance of neural
+networks by understanding the different mechanisms of action. The model I
+developed could form the basis for an application that provides practicing
+radiologists with rapid preclassification in seconds, making their job easier."
+Csiki Krisztina,INTERACTIVE SENSOR SYSTEM,"Nowadays, using sensors has become so popular that we do not even notice how easy it is
+for us to measure the world around us. Today we have the possibility and the technology to
+measure the physical, chemical and the biological characteristics of the world around us.
+The goal of my thesis was to build a scalable system for sensors, created with the help of
+an Arduino, which helps in the integration of new sensors in the system for users, who may face
+a challenge when integrating a new sensor in an environment with Arduino and microcontrollers.
+At the beginning I had to create a text-based protocol, written with ASCII code, which
+provides for the user an interface for dynamic configuration of the sensors and for the collective
+data forwarding.
+Several different sensors have been integrated into the sensor system, with which it is
+possible to measure different physical quantities and monitor changes in values, but also an
+interface for the collected data.
+For the better understanding of the real-time data collected by the sensors with the help of
+the Arduino I have also created a desktop application, , through which the real-time data
+measured by the sensors connected to the Arduino can be displayed, and it is also possible to
+save and review the data. The communication between the application and the sensors is realized
+by serial communication.
+I designed the application to be used for laboratory purposes."
+Czimbalmos Akos,MODELING WIRELESS SENSOR NETWORKS,"The purpose of the document Wireless Sensor Networks Modelling is to demonstrate the
+use of routing protocols in the design and operation of networks. Routing protocols play a key
+role in the selection and routing of data packets to reach their destination through the network.
+Routing protocols are based on different algorithms, which have different characteristics and
+operating principles. The aim of this documentation is to create a model to visualise the
+application of routing protocols, the propagation of packets and the evaluation of data. It also
+provides a means to compare the performance and efficiency of different routing protocols.
+Routing protocols are critical to the operation of wireless networks. A thorough understanding of
+the algorithms and their implementations will allow for a better understanding of the operation of
+networks, the detection of potential failures, and efficient planning, optimisation and operation.
+The documentation helps to understand the operation, advantages and limitations of different
+routing protocols, and helps to simulate networks by providing detailed code for simulations
+written in the OMNeT++ framework. Three routing protocols are described, a data-centric one
+(Gossiping), a hierarchical one (LEACH) and a location-based one (GAF), their comparison,
+conclusions drawn and the performance and efficiency of the routing protocols under study."
+Horváth Levente,DIGITAL SIGNAL PROCESSING WITH CORE DEVELOPMENT BOARDS," The aim of this work is to implement a low cost, easily accessible digital sound effect unit.
+The project involves the study of digital signal processing theory, algorithm design and
+development, and hardware implementation. In the first phase, the studied effects were tested
+under Python with pre-sampled raw guitar sound files. In the second phase, the algorithms were
+tested on a self-developed multimedia system with an STM32G491 microcontroller using
+artificially generated and synthesized signals. The quality of the effects was tested using both
+objective and subjective methods."
+Kantor Zsuzsa Krisztina,ANALIZA SEMNALELOR ECG PRIN METODA SPECTOGRAMELOR UTILIZATĂ ÎN DETECTAREA ARITMIILOR CU AJUTORUL REȚELELOR NEURONALE DE TIP DEEP LEARNING," Today, diagnostic methods in medicine are constantly evolving, and we can now apply
+techniques that were unimaginable before. Among the new possibilities and technological
+challenges, I aim to find solutions that can help us recognize and treat common cardiovascular
+diseases more effectively, thereby preventing premature or avoidable deaths.
+The main goal of my research is to develop new and advanced diagnostic systems specifically
+focused on the characteristics of cardiovascular diseases. These systems would enable more
+accurate and efficient diagnoses during the identification and treatment of these diseases. The
+foundation of my approach is the utilization of electrocardiography (ECG) signals in medicine.
+These signals provide precise and detailed information about the heart's electrical activity,
+making it possible to detect various heart diseases or other abnormalities.
+The first step involves preprocessing the signals, applying filtering and other normalization
+techniques. Then, I create an RGB color-channel image, a spectrogram. The spectrogram is a
+visual representation that shows the frequency spectrum of the signal over time. Different shades
+of color in the channels indicate the intensity of the frequencies, making it easier to analyze the
+structure and changes of the signal. This process helps extract essential information from the
+signals and reduces distortions caused by noise.
+These images serve as the input dataset for my deep learning-based training software, whose
+main task is to recognize four specific diseases. Therefore, my system will be able to identify
+patterns or subtle details that are not visible to the human eye, providing more accurate diagnoses
+for people. This can significantly contribute to improving healthcare outcomes and enhancing the
+quality of life."
+Nüszl Richárd István,WEB APPLICATION TO MANAGE INTERNSHIPS AND TRAINEESHIPS,"The topic of the project is to develop a web application that connects students, companies, and
+universities during their internships. The goal is to develop a user-friendly platform capable of
+managing the entire process related to internships.
+One of the major objectives of the project is for the application to function as a
+professional-oriented social platform for students and companies, thereby facilitating the
+development of professional relationships and nurturing partnerships between companies and
+universities.
+Another important objective of the project is to provide students with recommendations
+on the platform based on their profiles and fields of study. This allows them to find relevant
+opportunities in the field of internships. The algorithms of my recommendation system, using
+techniques like Cosine Similarity, consider the students' skills, interests, and the requirements set
+by the companies. Thus, the platform helps students find the most suitable internship positions,
+optimizing the related processes and ensuring the effectiveness of the internships.
+To develop the project, I am using modern web technologies such as Angular, Java
+Spring Boot, PostgreSQL, and AWS. These technologies help make the platform robust, scalable,
+secure, and fast."
+Olosz Izabella,Access control system with ESP32 camera mode,"Security systems are important for individuals, businesses, and institutions to maintain a secure environment and protect their assets. Modern technology offers various solutions for this purpose. The main objective of such systems is to detect unauthorized intruders among authorized individuals. Access control systems provide an efficient real-time solution to achieve this. They allow entry only to those individuals who have the appropriate permission and can authenticate themselves.
+
+For my thesis, I chose to implement a biometric access control system that utilizes facial recognition to identify individuals. My goal was to create an easily manageable, fast, efficient, and above all, secure system in a cost-effective manner, thereby simplifying the daily lives of people and streamlining the identification process for individuals seeking entry into buildings.
+
+To ensure a high level of security, I chose facial recognition as the biometric identification method. Facial recognition technology is widely known and used, often employed in secure computer systems, laptops, smartphones, or ATMs. In addition to its advantages—such as not requiring direct physical contact during the identification process and being a fast and efficient method—a face recognition-based system is more secure and harder to bypass compared to other identification methods. Passwords and PIN codes can be easily compromised or hacked, and various cards and keys can be lost or stolen, potentially leading to misuse by unauthorized individuals against security measures.
+
+Taking these aspects into consideration, I designed the system’s operation. To gain entry, it is a requirement for the administrator to add the individuals’ data and images. Once this condition is met, the person is granted access to the building. The user simply stands in front of the camera at an appropriate distance, and if they are found in the system, the door opens, allowing them to enter. To facilitate ease of use, I created a user interface that allows for easy addition of individuals, and for traceability, the system maintains a list of individuals who have entered the building, along with the exact entry time.
+
+The system I implemented simplifies the identification process during entry and provides a secure solution for detecting unauthorized individuals in everyday situations."
+Pál Andor,Web application for assigning diploma assignments to students, The aim of the thesis is to design and develop a web application that digitises the choice of subjects for the diploma. A solution was needed that would help and facilitate the work of the university committee and students in the diploma topic selection process. Our objectives included the development of a web application that could handle a large number of data and users and could be easily used by anyone. The application should meet all university requirements and could be further developed on request. Be secure and ensure that the application is maintainable. The objectives have been achieved in all areas. A web application has been developed that secretaries can log into and create periods and invite teachers and students to the system. Teachers can upload their degree topics and students can apply for them. And guests can view the diploma topics they have created. A wide range of technologies have been used in the development. Most prominent are the frontend and backend frameworks. Using Angular and Spring to boot I was able to develop a highly scalable and secure web application. Using PostgreSQL database to store data and testing frameworks and applications Cypress and Postman for maintainability.
+Rigmányi Zsombor,Automatic detection of pneumonia from radiologic images,"The aim of this thesis is to classify chest X-rays to detect the presence of pneumonia.
+A convolutional neural network was used to achieve a more accurate classification. Our
+goal was to develop an efficient classifier, which is a neural network created by our own
+model, or a neural network with GoogleNet architecture, trained for our own purposes
+using “transfer learning” technique.
+Our research methodology was based on studying existing solutions, conducting our
+own experiments and collecting data. We applied the transfer learning technique to the
+
+GoogleNet architecture, which is a pre-trained large model, thus improving the classi-
+fication accuracy. Data collection was performed using chest X-rays of pneumonia and
+
+asymptomatic cases.
+Based on the results, we were able to develop a graphical user interface that allows
+
+automatic classification of chest radiographs and diagnosis of pneumonia. The neural net-
+work with GoogleNet architecture achieved outstanding accuracy on the tested dataset,
+
+and compared to our own classification network, produced significantly better results,
+similar to the results of the networks studied in the literature.
+Based on these results, we conclude that a well-written neural network interoperating
+with the GoogleNet architecture can effectively detect pneumonia based on chest X-ray.
+This research could contribute to the improvement of medical diagnostics, helping early
+detection and more effective treatment."
+Soos Izabella,Smart irrigation and lighting system,"In human life, one of the most important and valuable things is time. In today's fast-paced
+world, events have become so accelerated that it is truly challenging to keep them under control
+and manage our time effectively. To save time, numerous smart devices and systems have
+emerged, making people's lives easier. We can even say that we are living in the era of smart
+systems.
+My thesis’ topic encompasses such a system. It helps us not only to save time, but also
+relieves us from a responsibility. This modern and innovative solution allows us to take care of
+our plants in the best possible way while minimizing the tasks of plant care and maximizing the
+health and beauty of our flowers. It assists in maintaining the plants in optimal condition, especially
+when we are not at home or don't have enough time for their care. The system's sensors and
+controllers monitor the environmental parameters of the plants, such as temperature, humidity,
+light intensity, and their watering needs.
+The smart flowerpot system automatically regulates watering, ensuring that the plants
+always receive the right amount of water at the right time. We no longer need to worry about
+overwatering or underwatering, as the system takes precise care of watering our flowers.
+Through an interactive and user interface, we can easily set the watering schedule, monitor
+the plants' condition, and track the environmental parameters. Whether we are at home or away,
+the system allows remote access, enabling us to stay connected with our flowers and intervene
+when necessary.
+For the control of the system, I have used an ESP32 microcontroller. The ESP32 is an
+extremely versatile and powerful platform that enables full control and monitoring of my smart
+flowerpot system."
+Szasz Attila,Control the Baxter robot using image recognition methods,"Industrial robots are more and more wide-spread in various manufacturing and logistics processes,
+where accuracy, speed, and safety are important factors. Robots are capable of automating tasks
+that are boring, dangerous, or too complex for humans. However, the collaboration between robots
+and humans represents challenges, especially when robots need to adapt flexibly to changing
+environments and tasks.
+
+The recognition and manipulation of small objects are tasks widely used in industrial and
+educational contexts. However, determining the type and positioning of these objects is not always
+straightforward, particularly when they have similar colors or sizes. In this paper, I present a
+method that enables the Baxter robot to easily differentiate cubes using ArUco markers. I describe
+how I programmed the Baxter robot to determine the type and position of cubes on a workspace
+and arrange them accordingly. Throughout my study, I provide a detailed presentation of the
+system's design, implementation, and testing.
+
+In my paper, I have developed a system that can control the Baxter robot to recognize and
+manipulate cuboid-shaped objects. The system consists of three main components: an image
+processing module that detects and identifies objects using the OpenCV and cv2.aruco libraries, a
+communication module that uses the ZMQ protocol to send and receive data, and a robot control
+module that utilizes the ROS (Robot Operating System) libraries to control the robot's arms and
+grippers. During the operation of the system, the robot captures an image of the workspace,
+determines the position and type of objects, and performs sorting based on this information."
+Szasz Nimrod Janos,PointerApp,"Nowadays, everyone has a smartphone that can solve many problems with various
+applications. Such useful applications are, for example, applications for paying our bills, but we
+can also find many applications for managing our day-to-day tasks.
+Mobile applications not only make our everyday lives easier but can also be helpful in
+educational institutions. The most commonly used mobile applications in schools and universities
+are various calculators, translators, and note-taking applications.
+However, applications for presenting PowerPoint presentations are not widespread among
+people, so their number is very small and they are not the best maintained or do not have many
+features that would make the use of these applications meaningful other than that the user does not
+have to keep a separate device with them.
+My thesis aims to design a system that allows laser pointers to be used on PowerPoint
+presentation slides with the help of our smartphone regardless of whether we have an Android or
+IOS phone. In addition, it should allow switching between slides and drawing on them. The system
+consists of two components: one part is the server, which receives and processes data sent by our
+phone; the other part is the phone, which detects the user’s hand movements with the help of the
+accelerometer in the phone and also sends the pressing of displayed buttons to the server via WiFi.
+The data required to connect to the server is made possible by scanning the QR code generated by
+the server."
+Szeibert Xaver,DEVELOPMENT OF AN ENERGY MANAGEMENT SYSTEM FOR  SMART HOMES," In the modern and rapidly evolving world, there is electric technology behind all our  needs, hobbies,  and work, which we use comfortably and without problems. In current times,  with the increase in inflation, the prices of all necessities have risen, especially electricity.  Therefore, if we do not pay attention to our daily energy consumption and do not m ake changes  in our energy usage habits, we can easily encounter financial difficulties.   The aim of my thesis is to develop an IoT (Internet of Things) system that enables easy  measurement and monitoring of energy consumption of electronic devices within a household.  Additionally, the system is capable of monitoring the production of solar panels installed in the  household. The data is stored in a database, allowing for future statistical analysis and insights.  This provides a more accurate understanding of energy costs and helps optimize consumption  while leveraging renewable energy sources.   The different units communicate with each other through the MQTT protocol, where  publishers (household appliances, solar panels) send sampled data to the broker (Raspber ry Pi),  where the data is processed, stored in a MongoDB database, and the processed data is sent to a  mobile application via a  REST  API service."
+Vagasi Zsolt Ferenc,CONTROLLING THE BAXTER ROBOT USING HAND GESTURES," In recent years, the application of industrial robots has witnessed significant growth. Their
+expanding applications and increasing functionality enable them to perform a wider range of
+human tasks. In this thesis, our research focused on developing a system that records user
+movements and utilizes them to calculate the necessary control signals for an industrial robot.
+Specifically, we designed a solution for the remote control of a two-armed industrial robot based
+on human arm movements.
+To achieve real-time control of both robot arms, we utilized a second-generation Kinect sensor,
+known for its motion tracking and distance measurement capabilities. The data captured by the
+Kinect sensor was subsequently transformed into a suitable format for controlling the robot arm.
+The developed control approach is based on the angle measurement of the users limbs, and based
+on this information the joints of the robot arm can be directly controlled.
+Our implementation applies a Baxter cooperative robot. Baxter is a fixed platform robot,
+equipped with two robotic arms, featuring seven degrees of freedom each. The system provides
+control of the robotic arms through hand gestures.
+The developed software provides control of the robotic arms, the gripping tools of the robot arm
+through hand gestures, in addition to moving the robot arm itself. Based on the state of the hand,
+the robot's gripping tools can open or close.
+In my paper, I used the ROS (Robot Operating System) libraries for robot control. Additionally,
+I used the Kinect SDK for handling the Kinect camera and the ZMQ protocol for communication
+between the components. The developed system can recognize the user, tracking their
+movements, and fitting them onto a dual-arm industrial robot."
+Zakariás Zsolt,Supporting online administration with image processing,"Thanks to technological advances, smartphones and the internet have become crucial in
+our lives, because it is always at our fingertips and also acts as a personal assistant to make
+our lives easier. The other major part of our lives is still dominated by personal dealings
+and paper-based documents. There is a perceptible barrier between the two poles, one of
+
+which is characterized by constant movement and speed, the other by slowness and time-
+consumption.
+
+The aim of this thesis is to develop an efficient system to break down this barrier, providing
+a new way of processing driving penalties. Traditional methods cannot keep up with our
+fast-paced world and can cause problems such as the difficulty of organizing fines and the
+resulting delay in payment. We set out to develop a system that meets today's technological
+requirements. In developing the system, we took into account both parties, the one who
+hands out the fine and the one who receives it, and we aimed for an implementation that is
+time-efficient for both roles. The use of an android application to deliver the punishment
+seemed to be the most appropriate, as our phone is always at hand which grants internet
+access to the user. The most obvious way to implement the system for drivers was to use a
+web-based interface, as this would provide them a relatively large interface for a better
+overview and easier payment of fines."

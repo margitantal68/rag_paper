@@ -1,0 +1,286 @@
+author,title,abstract
+Bereczki Arnold,"AUTOMATIC SEGMENTATION OF BRAIN TESTS FROM
+MULTISPECTRAL RMN VOLUMETRIC DATA","Nowadays medical image processing is a dynamically evolving science and industry. The
+rapid development of computers makes it possible to implement increasingly complex
+procedures. However, it is also possible for the computer to trigger the more tedious part of a
+human expert’s work and enable the doctor to focus only on cases where the computer has
+found something abnormal or suspicious. With this thesis, I also want to follow this trend. I
+propose to implement a machine learning procedure that can efficiently and accurately
+segment brain tissues based on MRI scans of six-month-old infants.
+During the implementation, I worked with the data published at the iSeg-2017 competition.
+From the OpenCV machine learning library, I found the discrete AdaBoost classifier to be the
+most suitable for segmentation, and I added a post-processing to improve the results of the
+classifier. In addition, I implemented software with a graphical user interface that can be used
+to launch segmentation tasks, visualize the results, and manage the inventory of performed
+operations. The average accuracy of the implemented segmentation procedure was slightly
+above 85%."
+Csorvasi Endre,Inventory application,"The paper is about a web application that provides a solution for companies in the
+complex task of inventory management.
+Nowadays, for every kind of task, there is an object or tool that helps to perform this
+task, thus simplifying people's lives. The use of objects, tools has also become common
+within companies, as it has allowed them to increase productivity. Because of the many
+objects used, keeping track of them has become an increasing challenge for companies.
+Due to the virus situation, a large number of companies have given employees the
+opportunity to work remotely .
+To address these problems, I have created a web application that allows companies to
+easily keep track of which objects are in the possession of an employee. The application
+should be available to users in multiple roles. The administrator, who is responsible for the
+application, whose job is to manage objects, users and user requests. Users are the employees
+who can view the objects and request the tools they need. These requests can be accepted or
+rejected by the administrators.
+Thanks to the web application , it is easy to access and does not need to be configured
+for each employee. All you need to access it is the Internet and a web browser."
+Deak Adrienn,Remote control of industrial robots with Android app,"Nowadays, IoT (Internet Of Things) technology-based systems are gaining more ground,
+enabling the efficient remote control, monitoring, and management of industrial processes
+with smart device applications. In the case of industrial software running on smart
+devices, reliable monitoring, rapid intervention, and proper management of the access
+control are critical. Hence, this kind of application development is a complex process.
+Industrial robots have their own control devices to program and monitor, but these tools
+are usually immovable. Therefore, in addition to these devices, mobile phone applications
+can effectively serve as an extension.
+This work aims to develop an open-source Android application that can be used to
+remotely control robots used in the industry. The developed application can monitor
+the motion of the robot based on video and sensor informations, it can send commands
+and control scripts to the robot, and it ensures the manual control of the robot based on
+video information. In addition to the aforementioned functionalities, the application can
+analyze the remote control technique of the users. This module can help to evaluate and
+educate manual robot control techniques."
+Demeny Szekely Adorjan,AUTOMATIC TESTING AND UPDATING OF THE NOMINATIM SERVER,"Nowadays, geopositioning can be done on even the smallest devices, such as a smart
+watch or a smart phone. Each of the GPS applications uses the reverse geocoding feature of the
+map application to give the user accurate information about their location. To be able to do this,
+the map application must be backed by a serious database that stores geographic data for millions
+of points around the world.
+There are many applications that can provide very accurate map data to users. The most known
+applications are Google Maps, Bing Maps, Apple Maps, and the open source OpenStreetMap.
+One of the great advantages of OpenStreetMap is that it is open source, but it is also one of it’s
+weaknesses, because being open source, anyone can update the data in its database.
+OpenStreetMap allows for local installation through software called Nominatim, this means that
+companies can become independent from big companies who provide Map APIs for huge
+amount of money. Installing such a server requires a huge amount of disk space, and the amount
+of data continues to grow after installation due to updates.
+The aim of this dissertation is to develop a software system that allows the Nominatim
+web server data to be updated automatically, but also allows the user to manage the update
+process. The software system consists of two main components, a web application that tests the
+data. A server collection that allows you to update the data in the database. The web application
+is an ASP.NET Core application implemented with an MVC architectural pattern. This testing
+application allows the user to test the differences between two Nominatim servers. The server
+collection consists of three ubuntu servers with Nominatim software installed. Their job is to
+update the data in the database."
+Erdos Jozsef,RESTAURANT FOOD ORDERING MOBILE APP,"The new innovations of the 21st century are making our daily lives easier, one of them
+being food ordering apps, which were mainly used during the quarantine period in our region.
+In my thesis, I will compare several food ordering apps, their usage, and I will also present an
+application developed by me, that has been in real use for more than three months in the
+villages near Odorheiu Secuiesc, Cristuru Secuiesc and Gheorgheni.
+I used several technologies to create the application. The restaurant's internal system
+was written in Node.js/Express.js. The API that serves the mobile app was written in Node.js
+and finally for the mobile application I used React Native.
+In my thesis I will present in detail how the application works and how to use it. It is
+important to mention that I wanted to create a user interface by using the knowledge I gained
+at the university, which provides a ready-to-use system for the users, that is rather simple and
+easy to use. Another interesting aspect is that I made the application available in small
+villages where online food ordering was not yet available."
+Gyorfi Endre,APIAapp - Mobile application to manage farmers' subsidies,"Romania receives a large amount of money from the European Union to support farmers involved
+in agri-environmental and agricultural production. The brainchild of the project is the Milvus associa-
+tion, which is involved in nature conservation research. They have observed that farmers have a big
+problem in obtaining information on subsidies, as there is currently no single website or application in
+Romania that collects subsidies and related information. To solve this problem, the APIA APP project
+was created, which consists of an Android application and a content management system.
+The aim of the application is to help local farmers to browse the subsidies available in Romania
+and to comply with the conditions attached to the subsidies. It also helps to follow the conditions of
+the subsidies already won. It helps farmers to win a grant by collecting the documents needed to win
+each grant. The development was done in Kotlin Multiplatform Mobile, which supports multiplatform
+application development, the Android part was written in Kotlin.
+The thesis describes the client and server application, the technologies used for its implementation,
+covering the architecture and the functionalities. Two persons participated in the development of the application, namely Endre Györfi and István-
+Lehel Balázs. The development has been divided according to functionalities, which can be followed in detail in the use-case diagram presented in the thesis."
+Kencse Szabolcs,uSochool – The digital catalogue,"The world is moving fast towards digitalization by taking huge steps in all areas of life and thus
+almost every person has now a smartphone. Nowadays, there are plenty of applications to facilitate
+our everyday tasks, however, in one of the most important areas, education, we still do not take
+advantage of the opportunities offered by these tools.
+The goal of my dissertation is to provide an alternative to the handwritten catalogue used in public
+education that makes it easy for all teachers, students, and parents to track student marks and
+absences and helps optimizing administration processes. A teacher can hold the catalogue of all
+the classes he teaches in his hand at the same time and note their grades at any time, as the physical
+limit, given by the fact that there is only one unique piece for each class, is eliminated. The students
+will also have the opportunity to view their marks and absences at any time without interrupting
+the classes and parents will be able to keep track of real data through their kid’s user as well.
+To implement this solution, I created a multiplatform application that is compatible with
+smartphones running iOS and Android, but also any device that has a web browser."
+Kis Gerlinda Boglarka,Graphical simulation of thermal models of buildings,"In today's digital world, modern remote controlled devices have also appeared in our homes.
+These devices ensure the safety of our homes, we can monitor various household appliances
+remotely and parameterize the comfort functions of our home.
+The aim of this thesis is to design a universal graphical interface which can visualize the thermal
+parameters of a given building, the control of the of the buildings furnace is parameterizable and
+real-time feedback off the processes can be read from the interface.
+The tunable parameters necessary for the mathematical model of the control algorithm can be
+entered by the user through a proprietary user interface, where the user can choose the type of wall
+material, and also specify other parameters (windows, doors, number of heaters) that are stored in
+a database running on an external server. The user interface uses the TCP network communication
+protocol to communicate with the control system. The calculated control signals can be displayed
+in the user interface, and at the same time the thermal heat map of the building is also displayed.
+Within the framework of the thesis, the user interface was implemented, which is able to establish
+communication with a working temperature control system, the interface provides the possibility
+for parameterization of the specified building, and to simultaneously assign changing heat map
+and control options to the given building.
+With the help of the user interface, the user can display and parameterize various control
+algorithms and choose the most optimal one, thereby saving energy."
+Kollo Zsolt,Timekeeping software system based on microservices,"Nowadays, cloud services are one of the most common IT services. It can be observed
+that various international IT companies strive to release their own cloud services, be it
+a hosting service, a database service or even a virtual server. The great advantage of
+these services is that the cloud hides from developers the infrastructure necessary for the
+operation of a particular system, thereby taking over responsibility from the developers.
+However, its advantages also include the fact that the user can keep their data safe and
+can access it from anywhere.
+The AZORA system, presented in this work, is an application that allows employees of
+a particular company to record the time spent on each project and task and to provide
+administrative staff with a complete and comprehensive picture of the activity within
+that organization. The system is based on a microservice architecture, from which the
+present work focuses on the implementation of the service responsible for the registration
+of hours.
+The app is fully powered by Microsoft Azure cloud services. This assumes that the
+application is serverless by which the cloud provider automatically deploys, scales, and
+manages the infrastructure required to run the code."
+Lukacs Botond,TESTER DE COMPONENTE ELECTRONICE,"In today’s world microcontroller system can be found in a lot of things and they have a big processing
+capacity and can be used generally in a lot of different applications. They have a lot of functions, from
+making a LED blink to automating complex systems. They also can be easily connected to external
+components so this way they can be used in more ways.
+For this cause this dissertation main goal it making a system which will be able to identify simple
+electoronic components whith their aproximative values and their pinouts. In electoronics there are
+a lot of electronic components, like resistors, capacitors, diodes and transistors. But when building
+a circuit it is good to know what is the component and their pinout, which is more important on
+semiconductors. In a lot of times the identifier values are unreadable or there is no datasheet avabile
+so it is hard to idnetify the component. For this purpose the ""electronic component teszter"" was made
+which automaticall identif and outputs the component values or outputs if if failed to identify the
+component. The process if fully automatic, only the component need to be connected to the tester
+socket and togle switch or it automatically starts when it is connected to power.
+
+The dissertation will cover microcontroller applications and their design for component recogniti-
+on and measurement."
+Lukacs Orsolya,BHEW - Be Healthy Eat Wisely,"Today, smartphones make most of our lives easier, as they allow us to access
+services that embrace our day-to-day operations. These services are available through
+a downloadable application, a website created by a specialized company. In many
+cases, software can save energy and time. The need to manage time can also be
+observed in the case of services that put our health and well-being first.
+As part of my dissertation, I am developing a software that provides health
+services. Important information is that the software is actually on-demand, serving a
+Client. The Client's job is to advise on diet, to work as a dietitian in which she can use
+the software. The implemented application, which allows the monitoring of clients,
+the creation of recipes and diets, was created with the help of Flutter. We use the
+real-time database provided by Firebase to store the data. The application is also
+available to patients, where they can follow their diet, monitor their changes in body
+size, and schedule appointments with their dietitian. The primary basis of the software
+was to minimize the number of applications required to be used in the work of a
+dietitian. Similar applications have been observed, as well as different parameters that
+need to be considered when developing a medical application.
+The Client also took part in the complete development of the software, and her
+comments and needs were taken into account. The application is a version of the
+expected software, for which there are still some development ideas, but for now, it
+fully covers the main functionalities."
+Madaras Ervin,Automatic recognition of PAL tiles,"The project aims to develop software for a wood processing company that can recognise
+PAL boards by identifying and comparing different properties. This software will help the
+operator of an automated crane to avoid cases where, due to human error, the supplier sends the
+wrong type of PAL plate, or where, due to the same error, the woodworking company has
+ordered the wrong type of PAL plate. These mistakes can lead to PAL boards, because of a
+different type than the one set for the automated crane, being sent to the wrong place in the
+warehouse or even the wrong type of board being processed.
+The wood processing plant provided data with images of the PAL plates, and from this,
+two classification algorithms were implemented. Since only one image sample of each PAL plate
+exists in the database, traditional classifiers based on artificial intelligence cannot be used. For
+this reason, the two algorithms that have been implemented extract features from each image and
+use these features to compare the input sample with the images in the database for comparison.
+One of these methods, which has been implemented, determines the dominant colors of
+the images by clustering. By comparing dominant colors, the algorithm is able to determine how
+similar two images are to each other. By calculating the Euclidean distance between the
+dominant colors, it can give a value for how different the two images are from each other,
+obviously the smaller the distance, the more similar the images are.
+Another method that has been implemented is to split the images into segments and then
+compute a histogram for each segment. These histograms are then concatenated to create a
+feature vector for the images. It then compares the feature vectors using chi-square distance.
+The conclusions are that the algorithms are sensitive to rotation. However, nice results
+will be obtained if a segment of the images is created, or only one dominant color is selected and
+compared."
+Mihaly Elod,Optimizing brain tumor segmentation from MRI data using intelligent post-processing,"Nowadays, imaging devices deployed in medical clinical practice are producing more and more
+imaging. Processing this data would require an ever-increasing number of human professionals.
+As human resource training is a slow and costly process, there is an increasing need to create
+an algorithm base that processes the daily acquired imagery in reliable quality and brings up to
+the physician only images in which a lesion is detected or suspected to be significant.
+
+The present thesis also aims to contribute to this algorithm base with a solution that
+allows to improve the accuracy of tumor segmentation from brain MRI images. Instead of the
+morphological post-processing step of an existing brain tumor segmentation procedure, an
+intelligent algorithm is proposed that achieves its goal using a random forest classifier.
+
+Experimental results have shown that the proposed method makes post-processing 18%
+
+more accurate by replacing the original morphological post-processing with intelligent post-
+processing, which reclassifies pixels based on ten morphological features extracted from planar
+
+and spatial neighborhoods, thus making the final segmentation result more accurate."
+Nagy Andrea,Brain Computer Interface (BCI) with artificial intelligence and EEG signal recognition,"The primary aim of the dissertation is to study the electrical activity of the brain, namely
+the EEG-type signals and to automatically recognize specific emotions. This requires sampled
+data collection and I used “Muse 2” headband in order to sample and collect this data. It was
+asked a woman and a man for the data collection and both of them made the same experiment.
+I processed the raw data, then I used it to build and teach an artificial neural network, which
+was created with the help of Tensorflow and Keras frameworks.
+The secondary aim of the dissertation is to examine the spectrum of the samples and
+apply different transformations, then to compare them. Based on previous research I examined
+the processing of continuous and discrete signals and placed more emphasis on discrete
+transformations.
+Based on my results (70-80% recognition efficiency), in order for the neural network
+to be as accurate as possible, it is necessary to collect more data, classify them into classes by
+providing them in a more optimal way. To reach this goal, in the future I would like to develop
+a set of rules from the collected data and to classify my data based on these rules, and so I hope
+to achieve greater recognition efficiency."
+Rozsnyai Arnold Robert,Statistical processing of vehicle routes,"In recent years, there has been a rapid increase in demand for vehicles equipped with
+GPS. As it becomes an increasing priority for people to get from one point to another as
+smoothly as possible, it can be beneficial to be able to filter out the busier road sections. It can be
+helpful for the vehicle owner to know as much retrievable information about the vehicle as
+possible based on the route taken.
+
+The aim of the dissertation is to process the routes of the vehicles in such a way that
+conclusions can be drawn from them, with the help of which relevant data (average speed, curve
+coordinates) can be filtered out. The available data set is made up of different data (coordinate,
+speed, consumption, direction). The developed algorithm can be used to reduce the data set
+without losing statistically important data.
+
+The most important data contains the coordinates that result in a route change. The
+solution is able to detect bends from which it can generate significant statistics (average speed in
+a curve). As a result, it is able to compare different routes and suggest new ones.
+
+The development takes place in ASP.NET Core Web App and is tested in xUnit, in which
+map elements are displayed using Leaflet and OpenStreetMap."
+Siko Zsolt Robert,Comparative study of supervised learning classification methods applied in medical image segmentation,"Along with the science of medicine, computer technology can be considered a
+unique technology, however, the last one is experiencing a very rapid development, with the
+emergence of more useful and newer information systems.
+The importance of information technology in medicine can not be ignored, because of its
+rapid development and a conscientious orientation, which offers a significant help in the
+field of medicine.
+Invented in the 1970s, the MRI scanner makes it possible to safely examine the human body
+without any surgery. The so-called MRI images are made, they are investigated, nowadays
+being segmented with the help of algorithms.
+My paper approaches a segmentation system, the aim being to test seven different
+algorithms, so that the mentioned algorithms will learn from the data provided by the babies'
+brains, then they make segmentation and reach an accuracy of over 80%.
+Coordination is done on a graphics user platform, so that, in order to test the system, the user
+can give arbitrary parameters for the chosen algorithm.
+Based on the tests, we found that among the tested methods, the AdaBoost and
+Random Forest algorithms showed the best performance and along with the appropriate
+settings they obtained an accuracy of about 83-84%"
+Szalma Tamas Zsolt,Scalable webshop based on Kubernetes,"In today’s world, websites have to meet more and more expectations, serving an increasing
+number of users is one of the most important aspects of modern websites. A page may be
+browsed by 100 people in one minute and increase to 100,000 in the next minute. A modern
+website needs to sense this and increase or decrease the resources allocated, depending on the
+load.
+The dissertation presents a scalable web application based on Kubernetes, during the creation of
+which I created a webshop, and then I containerized it and deployed it to a local Kubernetes
+cluster.
+The webshop allows you to browse and search for products belonging to different categories,
+display a specific product in detail, add products to the cart, register, login and pay by credit
+card.
+I used Spring Boot framework for the server side of the application. On the client side I used the
+Angular framework. For the database I used a relational MySQL database.
+To implement the containerization, I used Docker to create the containers that are the basis for
+deploying the application to the Kubernetes cluster. I solved the deployment to the Kubernetes
+cluster with Minikube, which allowed me to use Kubernetes locally for free.
+In the dissertation I write in detail about the technologies used, mainly about Kubernetes and
+Docker, the implementation of functions, the architecture and the results achieved."

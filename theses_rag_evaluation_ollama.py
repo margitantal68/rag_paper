@@ -4,6 +4,10 @@ from pyexpat import model
 from numpy import std
 import ollama
 import pandas as pd
+from langchain_elasticsearch import ElasticsearchStore
+from langchain_huggingface import HuggingFaceEmbeddings
+from sentence_transformers import SentenceTransformer
+
 
 from openai import OpenAI
 from datasets import Dataset
@@ -15,9 +19,19 @@ from ragas.metrics import (
     answer_correctness,
 )
 from ragas import evaluate
-# from utils import LLM_MODEL
 
+CONTEXT_TYPE = ['PERFECT', 'TOP_5']
+CONTEXT = CONTEXT_TYPE[1]
 
+INDEX_NAME = "sapi_theses"
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+
+# Initialize ElasticsearchStore and embedding model
+es = ElasticsearchStore(
+    es_url="http://localhost:9200",
+    index_name =INDEX_NAME,
+    embedding = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+)
 
 # DeepSeek response is different
 def extract_answer_from_deepseek_response(response):
@@ -48,6 +62,38 @@ def get_answer_from_ollama(user_input, reference_contexts):
         ])
     return response.message.content
 
+def vector_search_index(es_store, query_text, field="vector", k=5):
+    # Generate the embedding vector for the query text
+    embedding_model = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+    query_vector = embedding_model.embed_query(query_text)
+
+    # Define the vector search body using `knn`
+    search_body = {
+        "_source": {
+            "excludes": ["vector"]  # Exclude any additional vectors in the results
+        },
+        "knn": {
+            "field": field,
+            "query_vector": query_vector,
+            "k": k
+        }
+    }
+
+    # Execute the search
+    response = es_store.client.search(index=INDEX_NAME, body=search_body)
+
+    # Return the hits from the response
+    results =  response["hits"]["hits"]
+    # Extract and join by newline  the text from the hits
+    texts = [hit['_source']['text'] for hit in results]
+    # return the joined elements of the texts list
+    return "\n".join(texts)
+
+
+
+    
+
+
 
 def main(input_filename):
     # Load the dataset
@@ -60,20 +106,26 @@ def main(input_filename):
     answers = []
     for index, row in data.iterrows():
         user_input = row['user_input']
-        reference_contexts = row['reference_contexts']
+        if CONTEXT == 'PERFECT':
+            reference_contexts = row['reference_contexts']
+        else:
+            reference_contexts = vector_search_index(es, user_input)
+        
+
         print(f"Processing row {index+1}/{len(data)}: {user_input}")
         answer = get_answer_from_ollama(user_input, reference_contexts)
         if OLLAMA_MODEL == "deepseek-r1":
             answer = extract_answer_from_deepseek_response(answer)
         print(f"\tAnswer: {answer}")
         answers.append(answer)
+        
 
     # # Add the answers as a new column
     data['answer'] = answers
 
     # # Save the updated dataset
-    # data.to_csv(input_filename+ '_with_answers_' + LLM_MODEL + '.csv', index=False)
-    # print("Answers have been added and saved ")
+    data.to_csv(input_filename+ '_with_answers_' + OLLAMA_MODEL + '.csv', index=False)
+    print("Answers have been added and saved ")
 
     data.rename(columns={"reference_contexts": "retrieved_contexts"}, inplace=True)
     dataset = Dataset.from_pandas(data)
@@ -152,12 +204,16 @@ def compute_metrics_question_types(llm_model):
         print(f'\tAnswer Correctness avg: {average_answer_correctness: .2f}, std: {std_answer_correctness: .2f}')
 
 
+        
+       
+
 if __name__ == "__main__":
+    print("Evaluation type: ", CONTEXT)
     # Local models
     # OLLAMA_MODEL = "llama3"
     # OLLAMA_MODEL = "deepseek-r1"
-    OLLAMA_MODEL = "deepseek-r1:32b"
-    # OLLAMA_MODEL = "mistral" 
+    # OLLAMA_MODEL = "deepseek-r1:32b"
+    OLLAMA_MODEL = "mistral" 
     # OLLAMA_MODEL = "mistral:7b-instruct-v0.3-fp16"
     # OLLAMA_MODEL = "gemma2:9b-instruct-fp16"
 

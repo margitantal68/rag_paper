@@ -5,14 +5,24 @@ from sympy import use
 from langchain_elasticsearch import ElasticsearchStore
 from langchain_huggingface import HuggingFaceEmbeddings
 
+# INDEX_NAME = "sapi_theses"
+# INDEX_NAME = "sapi_theses_bge_small_en"
+# INDEX_NAME = "sapi_theses_bge_base_en"
+INDEX_NAME = "sapi_theses_bge_large_en"
+
+# EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+# EMBEDDING_MODEL_NAME = "BAAI/bge-small-en" 
+# EMBEDDING_MODEL_NAME = "BAAI/bge-base-en"
+EMBEDDING_MODEL_NAME = "BAAI/bge-large-en"
+
 # Initialize ElasticsearchStore and embedding model
 es_store = ElasticsearchStore(
     es_url="http://localhost:9200",
-    index_name="sapi_theses",
-    embedding=HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+    index_name =INDEX_NAME,
+    embedding = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 )
 
-embedding_function=HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+embedding_function = HuggingFaceEmbeddings(model_name =EMBEDDING_MODEL_NAME)
 
 
 def keyword_search_index(es_store, query_text):
@@ -28,7 +38,7 @@ def keyword_search_index(es_store, query_text):
     }
 
     # Execute the search
-    response = es_store.client.search(index="sapi_theses", body=search_body)
+    response = es_store.client.search(index=INDEX_NAME, body=search_body)
     
     # Return the hits from the response
     return response["hits"]["hits"]
@@ -37,7 +47,7 @@ def keyword_search_index(es_store, query_text):
 
 def vector_search_index(es_store, query_text, field="vector", k=10):
     # Generate the embedding vector for the query text
-    embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+    embedding_model = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
     query_vector = embedding_model.embed_query(query_text)
 
     # Define the vector search body using `knn`
@@ -53,7 +63,7 @@ def vector_search_index(es_store, query_text, field="vector", k=10):
     }
 
     # Execute the search
-    response = es_store.client.search(index="sapi_theses", body=search_body)
+    response = es_store.client.search(index=INDEX_NAME, body=search_body)
 
     # Return the hits from the response
     return response["hits"]["hits"]
@@ -93,7 +103,7 @@ def vector_search(query, print_text=False):
 def evaluate_retrieval():
     folder = "theses/TESTSET/"
     filename = f"test_dataset_classified.csv"
-    ofilename = f"test_dataset_retrieval_results.csv"
+    ofilename = f"test_dataset_retrieval_results_" + INDEX_NAME + ".csv"
 
     data = pd.read_csv(folder + filename)
     question_type_column = data['question_type']
@@ -155,7 +165,7 @@ def evaluate_retrieval():
 
 def retrieval_results_by_question_type():
     folder = "theses/TESTSET/"
-    filename = f"test_dataset_retrieval_results.csv"
+    filename = f"test_dataset_retrieval_results_" + INDEX_NAME + ".csv"
 
     data = pd.read_csv(folder + filename)
     mrr_keyword = sum([1/x for x in data['keyword_results']])/len(data['keyword_results'])

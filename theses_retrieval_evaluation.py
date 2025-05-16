@@ -1,19 +1,26 @@
 import keyword
 import re
+import os
 import pandas as pd
 from sympy import use
 from langchain_elasticsearch import ElasticsearchStore
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# INDEX_NAME = "sapi_theses"
+from dotenv import load_dotenv
+import os
+
+INDEX_NAME = "sapi_theses"
 # INDEX_NAME = "sapi_theses_bge_small_en"
 # INDEX_NAME = "sapi_theses_bge_base_en"
-INDEX_NAME = "sapi_theses_bge_large_en"
+# INDEX_NAME = "sapi_theses_bge_large_en"
 
-# EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 # EMBEDDING_MODEL_NAME = "BAAI/bge-small-en" 
 # EMBEDDING_MODEL_NAME = "BAAI/bge-base-en"
-EMBEDDING_MODEL_NAME = "BAAI/bge-large-en"
+# EMBEDDING_MODEL_NAME = "BAAI/bge-large-en"
+
+
+load_dotenv() 
 
 # Initialize ElasticsearchStore and embedding model
 es_store = ElasticsearchStore(

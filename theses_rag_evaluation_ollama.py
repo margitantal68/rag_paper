@@ -1,13 +1,14 @@
 import os
 import ast
-from pyexpat import model
-from numpy import std
 import ollama
 import pandas as pd
+
+from pyexpat import model
+from numpy import std
+
 from langchain_elasticsearch import ElasticsearchStore
 from langchain_huggingface import HuggingFaceEmbeddings
 from sentence_transformers import SentenceTransformer
-
 
 from openai import OpenAI
 from datasets import Dataset
@@ -20,11 +21,22 @@ from ragas.metrics import (
 )
 from ragas import evaluate
 
+from dotenv import load_dotenv
+
+# Imports for reranker
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+import torch
+from typing import List, Tuple
+
+
+load_dotenv() 
+
 CONTEXT_TYPE = ['PERFECT', 'TOP_5']
 CONTEXT = CONTEXT_TYPE[1]
 
 INDEX_NAME = "sapi_theses"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+embedding_model = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
 # Initialize ElasticsearchStore and embedding model
 es = ElasticsearchStore(
@@ -64,7 +76,6 @@ def get_answer_from_ollama(user_input, reference_contexts):
 
 def vector_search_index(es_store, query_text, field="vector", k=5):
     # Generate the embedding vector for the query text
-    embedding_model = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
     query_vector = embedding_model.embed_query(query_text)
 
     # Define the vector search body using `knn`
@@ -86,13 +97,47 @@ def vector_search_index(es_store, query_text, field="vector", k=5):
     results =  response["hits"]["hits"]
     # Extract and join by newline  the text from the hits
     texts = [hit['_source']['text'] for hit in results]
+    return texts
     # return the joined elements of the texts list
-    return "\n".join(texts)
+    # return "\n".join(texts)
 
 
 
-    
 
+# Load reranker model and tokenizer (only once)
+model_name = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
+
+def rerank_chunks(query: str, chunks: List[str], top_k: int = 5) -> List[Tuple[str, float]]:
+    """
+    Reranks the given chunks based on relevance to the query using a cross-encoder reranker model.
+
+    Args:
+        query (str): The input query.
+        chunks (List[str]): Candidate text chunks.
+        top_k (int): Number of top reranked results to return.
+
+    Returns:
+        List[Tuple[str, float]]: Top-K chunks and their scores (in descending order).
+    """
+    # Prepare query-chunk pairs
+    pairs = [(query, chunk) for chunk in chunks]
+
+    # Tokenize pairs
+    inputs = tokenizer(pairs, padding=True, truncation=True, return_tensors="pt")
+
+    with torch.no_grad():
+        scores = model(**inputs).logits.squeeze().tolist()
+
+    if isinstance(scores, float):  # when only one chunk
+        scores = [scores]
+
+    # Pair chunks with scores and sort
+    scored_chunks = list(zip(chunks, scores))
+    scored_chunks.sort(key=lambda x: x[1], reverse=True)
+
+    return scored_chunks[:top_k]
 
 
 def main(input_filename):
@@ -110,13 +155,14 @@ def main(input_filename):
             reference_contexts = row['reference_contexts']
         else:
             reference_contexts = vector_search_index(es, user_input)
+            rerank_chunks(user_input, reference_contexts, 2)
         
 
         print(f"Processing row {index+1}/{len(data)}: {user_input}")
         answer = get_answer_from_ollama(user_input, reference_contexts)
         if OLLAMA_MODEL == "deepseek-r1":
             answer = extract_answer_from_deepseek_response(answer)
-        print(f"\tAnswer: {answer}")
+        # print(f"\tAnswer: {answer}")
         answers.append(answer)
         
 
@@ -128,6 +174,9 @@ def main(input_filename):
     print("Answers have been added and saved ")
 
     data.rename(columns={"reference_contexts": "retrieved_contexts"}, inplace=True)
+
+ 
+
     dataset = Dataset.from_pandas(data)
 
     # Evaluate the dataset
@@ -208,12 +257,13 @@ def compute_metrics_question_types(llm_model):
        
 
 if __name__ == "__main__":
+    # print(os.getenv("OPENAI_API_KEY"))
     print("Evaluation type: ", CONTEXT)
     # Local models
     # OLLAMA_MODEL = "llama3"
-    # OLLAMA_MODEL = "deepseek-r1"
+    OLLAMA_MODEL = "deepseek-r1"
     # OLLAMA_MODEL = "deepseek-r1:32b"
-    OLLAMA_MODEL = "mistral" 
+    # OLLAMA_MODEL = "mistral" 
     # OLLAMA_MODEL = "mistral:7b-instruct-v0.3-fp16"
     # OLLAMA_MODEL = "gemma2:9b-instruct-fp16"
 

@@ -28,13 +28,7 @@ def extract_name_from_filename(filename):
 
 
 def add_theses_to_index_from_file(year, program, filename):
-    es_store = ElasticsearchStore(
-        es_url="http://localhost:9200",
-        index_name=INDEX_NAME,
-        # embedding=HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-        embedding = HuggingFaceEmbeddings(model_name=MODEL_NAME)
-
-    )
+   
     documents = [] 
     df = pd.read_csv(filename)
     print(df.shape)
@@ -51,7 +45,7 @@ def add_theses_to_index_from_file(year, program, filename):
             )
             documents.append(document)
             print(f"Author: {author}, Title: {title}")
-            es_store.add_documents([document])
+            # es_store.add_documents([document])
         except Exception as e:
             print("Exception: ", e)
             break
@@ -61,14 +55,26 @@ def add_theses_to_index_from_file(year, program, filename):
     print(f"Added {len(documents)} documents to the index {INDEX_NAME}.")
 
 
-# Add theses to the index
-# add_theses_to_index_from_file(2021, "INF", "theses/BSC_2021_INF_abstracts.csv")
-add_theses_to_index_from_file(2022, "INF", "theses/BSC_2022_INF_abstracts.csv")
-add_theses_to_index_from_file(2023, "INF", "theses/BSC_2023_INF_abstracts.csv")
-add_theses_to_index_from_file(2024, "INF", "theses/BSC_2024_INF_abstracts.csv")
+es_store = ElasticsearchStore(
+        es_url="http://localhost:9200",
+        index_name=INDEX_NAME,
+        # embedding=HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+        embedding = HuggingFaceEmbeddings(model_name=MODEL_NAME)
 
-add_theses_to_index_from_file(2021, "CALC", "theses/BSC_2021_CALC_abstracts.csv")
-add_theses_to_index_from_file(2022, "CALC", "theses/BSC_2022_CALC_abstracts.csv")
-add_theses_to_index_from_file(2023, "CALC", "theses/BSC_2023_CALC_abstracts.csv")
-add_theses_to_index_from_file(2023, "SD",  "theses/MSC_2023_SD_abstracts.csv")
+    )
+
+if __name__ == "__main__":
+    # Add theses to the index
+  
+    # add_theses_to_index_from_file(2021, "INF", "theses/BSC_2021_INF_abstracts.csv")
+    add_theses_to_index_from_file(2022, "INF", "theses/BSC_2022_INF_abstracts.csv")
+    add_theses_to_index_from_file(2023, "INF", "theses/BSC_2023_INF_abstracts.csv")
+    add_theses_to_index_from_file(2024, "INF", "theses/BSC_2024_INF_abstracts.csv")
+
+    add_theses_to_index_from_file(2021, "CALC", "theses/BSC_2021_CALC_abstracts.csv")
+    add_theses_to_index_from_file(2022, "CALC", "theses/BSC_2022_CALC_abstracts.csv")
+    add_theses_to_index_from_file(2023, "CALC", "theses/BSC_2023_CALC_abstracts.csv")
+    add_theses_to_index_from_file(2023, "SD",  "theses/MSC_2023_SD_abstracts.csv")
+    count = es_store.client.count(index=INDEX_NAME)['count']
+    print(f"Document count: {count}")
 

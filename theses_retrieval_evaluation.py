@@ -30,6 +30,7 @@ es_store = ElasticsearchStore(
 )
 
 embedding_function = HuggingFaceEmbeddings(model_name =EMBEDDING_MODEL_NAME)
+embedding_model = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
 
 def keyword_search_index(es_store, query_text):
@@ -52,9 +53,10 @@ def keyword_search_index(es_store, query_text):
 
 
 
+
 def vector_search_index(es_store, query_text, field="vector", k=10):
     # Generate the embedding vector for the query text
-    embedding_model = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+   
     query_vector = embedding_model.embed_query(query_text)
 
     # Define the vector search body using `knn`

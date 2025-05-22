@@ -31,8 +31,6 @@ from typing import List, Tuple
 
 load_dotenv() 
 
-CONTEXT_TYPE = ['PERFECT', 'TOP_5']
-CONTEXT = CONTEXT_TYPE[1]
 
 INDEX_NAME = "sapi_theses"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
@@ -155,8 +153,9 @@ def main(input_filename):
             reference_contexts = row['reference_contexts']
         else:
             reference_contexts = vector_search_index(es, user_input)
-            rerank_chunks(user_input, reference_contexts, 2)
-        
+            reranked_contexts  = rerank_chunks(user_input, reference_contexts, 4)
+            reference_contexts = [item[0] for item in reranked_contexts]
+            
 
         print(f"Processing row {index+1}/{len(data)}: {user_input}")
         answer = get_answer_from_ollama(user_input, reference_contexts)
@@ -254,18 +253,21 @@ def compute_metrics_question_types(llm_model):
 
 
         
+CONTEXT_TYPE = ['PERFECT', 'TOP_5']
+CONTEXT = CONTEXT_TYPE[1]
        
 
 if __name__ == "__main__":
     # print(os.getenv("OPENAI_API_KEY"))
     print("Evaluation type: ", CONTEXT)
     # Local models
-    # OLLAMA_MODEL = "llama3"
-    OLLAMA_MODEL = "deepseek-r1"
+    OLLAMA_MODEL = "llama3"
+    # OLLAMA_MODEL = "deepseek-r1"
     # OLLAMA_MODEL = "deepseek-r1:32b"
     # OLLAMA_MODEL = "mistral" 
     # OLLAMA_MODEL = "mistral:7b-instruct-v0.3-fp16"
     # OLLAMA_MODEL = "gemma2:9b-instruct-fp16"
+    # OLLAMA_MODEL = "gemma:7b"
 
     # OLLAMA_BASE_URL = 'http://192.168.11.102:11500'		
 		
@@ -275,5 +277,5 @@ if __name__ == "__main__":
 
     input_filename = 'theses/TESTSET/test_dataset'
     print(f"Running evaluation for {OLLAMA_MODEL} model")
-    # main(input_filename)
+    main(input_filename)
     compute_metrics_question_types(OLLAMA_MODEL)

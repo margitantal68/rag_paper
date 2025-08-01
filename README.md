@@ -4,6 +4,9 @@ This is a repository for paper: `Evaluating Open-Source LLMs in RAG Systems: A B
 📚 [Antal, M., Buza, K. Evaluating Open-Source LLMs in RAG Systems: A Benchmark on Diploma Theses Abstracts Using Ragas. Acta Univ. Sapientiae Inform. 17, 5 (2025). https://doi.org/10.1007/s44427-025-00006-3](https://link.springer.com/article/10.1007/s44427-025-00006-3)
 
 🎯 [Presentation Slides](docs/rag_paper.md)
+
+🎯 [Presentation Slides (PDF)](docs/rag_paper.pdf)
+
 ## Installation
 
 ### Prerequisites

@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: gaia
 class:
     - lead 
@@ -20,66 +20,64 @@ MathInfo
 September 8-12, 2025
 
 
+---
+## **Why RAG?**
+
+- LLMs are not up to date, **hallucinate** 
+- You want answers based on **your own private data**
 
 ---
 ## **RAG System Architecture**
-Architecture<br>
-<img src="rag_architecture.png" alt="General Architecture" width="700"/> 
+RAG = Information Retrieval + Generative AI<br>
+<img src="rag_architecture.jpg" alt="General Architecture" width="700"/> 
 
-[source](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0005cb44-e213-42ff-9dae-312b49c0b191_2000x1190.jpeg)
+---
+## **RAG Architecture**
+Details 
+<img src="rag_general.jpg" alt="General Architecture" width="1000"/>
 
+---
+## **RAG - Challenges**
+Challenges
+<img src="rag_questions.jpg" alt="General Architecture" width="1000"/>
 
 ---
 
-## **Introduction to RAG Systems**
+## **Our RAG challenges**
 
-*   **Retrieval-Augmented Generation (RAG) systems** enhance Language Model (LLM) performance.
-*   They **ground LLMs in external knowledge sources**, such as vector databases.
-*   **Challenge**: Evaluating the effectiveness of RAG systems, as both **retrieval** and **generation** components must be assessed.
+- How to encode?
+- How to pass the context?
+- How to verify?
 ---
+## **Our RAG challenges**
 
-## **The Challenge of RAG Evaluation**
+- How to encode? = **Embedder model**
+- How to pass the context? = **Number of similar chunks + Reranking**
+- How to verify? = **Dataset + Metrics**
 
-*   **Evaluation benchmarks** often lack complexity and domain specificity needed for comprehensive RAG assessment.
-*   There is a necessity for **robust datasets** and **metrics** that accurately reflect real-world applications.
-*   Evaluation must assess both **Retrieval** and **Generation** independently and in **combination**.
-
----
-
-## **Our Contributions**
-
-1.  Creation of a novel, **domain-specific dataset** for RAG evaluation using diploma thesis abstracts.
-1.  **Categorization of questions** into `summary`, `single fact`, and `reasoning` types.
-1.  Comprehensive **evaluation** of a RAG pipeline:
-    *   Retriever performance: **lexical** and **semantic search**.
-    *   Generation efficacy: **faithfulness** and **answer correctness** 
 
 ---
 
 ## **The *SapiTheses* Dataset**
+### **Creation**
 
-*   **Source documents**: **227** English abstracts of diploma theses
-*   **Question-Answer pair generation**:
-    *   Used **Ragas** to generate questions
-    *   Each question relates to a single document (**single hop**) 
-    *   **GPT-4o** was used by Ragas for question and answer generation.
-    *   **122 human-reviewed questions** remained after removing overly simple or general ones.
+<img src="sapi_theses.jpg" alt="General Architecture" width="1100"/>
 
 ---
 
-## **Question Categorization Taxonomy**
+## **The *SapiTheses* Dataset**
+### **Question Categorization Taxonomy**
 
 
-* **Fact Single Questions**: Seek **direct factual information** explicitly present in the abstract.
+* **Fact Single Questions (25)**: Seek *direct factual information* explicitly present in the abstract.
     
-*   **Reasoning Questions**: Require **logical inference or multi-step reasoning** based on the abstract; the answer is inferred, not explicit.
+*   **Reasoning Questions (73)**: Require *logical inference or multi-step reasoning* based on the abstract; the answer is inferred, not explicit.
    
-*   **Summary Questions**: Ask for a **condensed version or key points** of the abstract.
+*   **Summary Questions (24)**: Ask for a *condensed version or key points* of the abstract.
    
-*   **Dataset Distribution**: **25** fact single, **73** reasoning, **24** summary questions.
 ---
 ## **RAG System Evaluation**
-Retriever Evaluation<br>
+Retriever Evaluation
 <img src="retriever_pipeline_mathinfo.png" alt="General Architecture" width="700"/> 
 
 ---
@@ -96,87 +94,81 @@ Retriever Evaluation<br>
 ---
 ## **Retrieval Quality Metrics**
 
-*   **Mean Reciprocal Rank (MRR)**: Ranks the first relevant document's position.
-*   **Recall@k**: Frequency of the accurate context being found within the **top k** result.
+*   **Mean Reciprocal Rank (MRR)**: `rank_i` - the rank position of the first relevant document for the i-th query.
+<img src="mrr.jpg" alt="MRR" width="300"/> 
+*   **Recall@k**: Frequency of the relevant document being found within the **top k** result.
 
 ---
 ## **Retriever Performance Insights**
 
 Embedding model: `all-mpnet-base-v2 (768)` <br>
-<img src="retrieval_keyword_semantic.png" alt="Retriever Performance" width="550"/> 
+<img src="retrieval_keyword_semantic.png" alt="Retriever Performance" width="575"/> 
 
 ---
 ## **Retriever Performance - BGE models**
 
 Embedding models: `small (384)`, `base (768)`, `large(1024)` <br>
-<img src="bge_metrics.png" alt="Retriever Performance" width="600" />
+<img src="bge_metrics.png" alt="Retriever Performance" width="700" />
 
 
 ---
 ## **Answer Generation Subsystem**
-
-*   **Open-Source LLMs tested**:
-    *   Mistral-Q4 (7.0B, 32K context)
-    *   Mistral-FP16 (7.0B, 32K context)
-    *   DeepSeek-r1-7.6B (7.6B, 128K context)
-    *   DeepSeek-r1-32B (32.0B, 128K context)
-    *   Llama3 (8.0B, 8K context)
-    *   Gemma3 (7.0B, 8K context)
+### **Open-Source LLMs tested**:
+- Mistral-Q4 (7.0B, 32K context)
+- Mistral-FP16 (7.0B, 32K context)
+- DeepSeek-r1-7.6B (7.6B, 128K context)
+- DeepSeek-r1-32B (32.0B, 128K context)
+- Llama3 (8.0B, 8K context)
+- Gemma3 (7.0B, 8K context)
 
 ---
 ## **Generation Performance Metrics**    
 
-*   **Faithfulness**: Checks if the answer is **factually consistent with the retrieved context**, helping identify hallucination.
-*   **Answer Relevance**: Measures how well the **answer addresses the input question**.
-*   **Semantic Similarity**: Assesses **content overlap** between the generated and reference answers.
-*   **Answer Correctness**: Overall judgment of **accuracy**, considering factual content and semantic alignment.
+*   **Faithfulness**: Checks if the answer is *factually consistent with the retrieved context*, helping identify hallucination.
+*   **Answer Relevance**: Measures how well the *answer addresses the input question*.
+*   **Semantic Similarity**: Assesses *content overlap* between the generated and reference answers.
+*   **Answer Correctness**: Overall judgment of *accuracy*, considering factual content and semantic alignment.
+
+
+---
+## **Faithfulness**    
+
+- **Question:** When and where was Einstein born?
+- **Context:** Albert Einstein *(born 14 March 1879)* was a *German-born* theoretical physicist, widely held to be one of the greatest and most influential scientists of all time.
+
+- **High faithfulness answer:** Einstein was born in `Germany` on `14th March 1879`.
+
+- **Low faithfulness answer:** Einstein was born in `Germany` on `20th March 1879`.
+
 
 ---
 
 ## **Generation Performance - Ideal Setting**
-
-  LLM prompted with the original abstract (100% relevant) <br>
-<img src="generation_ideal.png" alt="Generation Performance - Ideal Setting" width="600"/>
+LLM + original abstract (100% relevant)
+<img src="generation_ideal.png" alt="Generation Performance - Ideal Setting" width="800"/>
 
 ---
 
 ## **Generation Performance - Real Setting**
-
- LLM prompted with TOP 3 abstracts (reranked) <br>
-<img src="generation_real.png" alt="Generation Performance " width="600"/>
-<!-- *   **Setup**: Top **3** most similar documents retrieved, then **re-ranked** by `cross-encoder/ms-marco-MiniLM-L-6-v2`.
-
-
-
-<!-- *   **Llama3** remains the **strongest overall performer** with high faithfulness (0.76) and solid correctness (0.71), demonstrating **robustness to real-world retrieval imperfections**.
-*   **Mistral-Q4 and Mistral-FP16** also showed **stable performance** with only small declines, indicating robustness.
-*   **DeepSeek models** experienced moderate to significant drops in faithfulness and answer relevance, suggesting **higher sensitivity to retrieval imperfections**.
-*   **Gemma3** remained the **weakest model** by a large margin.
-*   **Crucial Insight**: Real-world RAG performance is **consistently lower than in ideal conditions**, highlighting the critical importance of high-quality document retrieval. --> 
+LLM prompted + TOP 3 abstracts (reranked)
+<img src="generation_real.png" alt="Generation Performance " width="800"/>
 
 ---
 
 ## **Performance Across Question Types**
-
- LLM prompted with the original abstract (PERFECT) <br>
-<img src="faithfulness_question_types.png" alt="Generation Performance " width="600"/>
-
-<!-- *   **Llama3** is the **most accurate and reliable across all question types**.
-*   **Mistral models** perform well, especially for **fact-based and summary questions**.
-*   **Reasoning questions prove challenging for all models**, consistently yielding lower faithfulness scores. Even with relevant context, multi-step inference poses difficulties.
-*   **Fact-based questions consistently yield the highest faithfulness scores** across models, confirming LLMs' adeptness at direct factual queries. -->
+LLM + original abstract (PERFECT)
+<img src="faithfulness_question_types.png" alt="Generation Performance " width="800"/>
 
 ---
 ## **Reranking effect**
-
- Llama3 prompted with: PERFECT, TOP 5, TOP 5 reranked <br>
-<img src="reranking_effect.png" alt="Generation Performance " width="600"/>
+Llama3 + (PERFECT, TOP 5, TOP 5 reranked)
+<img src="reranking_effect.png" alt="Generation Performance " width="800"/>
 
 ---
 
 ## **Conclusions**
 
-*   **Lexical and semantic search methods have distinct strengths**: Consider Hybrid search
+*   **Lexical** and **semantic search** methods have distinct strengths: consider **hybrid search**
 
 * **Embedding choice is critical**: Mid-sized embeddings often outperform larger ones in retrieval tasks.
 

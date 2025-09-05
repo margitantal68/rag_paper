@@ -69,11 +69,12 @@ Challenges
 ### **Question Categorization Taxonomy**
 
 
-* **Fact Single Questions (25)**: Seek *direct factual information* explicitly present in the abstract.
+* **Fact Single Questions (25)**: Seek **direct factual information** explicitly present in the abstract.
+*What is the Nash equilibrium in the context of two-person games?*
     
-*   **Reasoning Questions (73)**: Require *logical inference or multi-step reasoning* based on the abstract; the answer is inferred, not explicit.
+*   **Reasoning Questions (73)**: The answer is inferred, not explicit. *How can musical taste help in forming friendships?*
    
-*   **Summary Questions (24)**: Ask for a *condensed version or key points* of the abstract.
+*   **Summary Questions (24)**: Ask for key points of the abstract. *What is the main purpose of the mobile app for Târgu Mures Zoo?*
    
 ---
 ## **RAG System Evaluation**
@@ -124,7 +125,7 @@ Embedding models: `small (384)`, `base (768)`, `large(1024)` <br>
 ---
 ## **Generation Performance Metrics**    
 
-*   **Faithfulness**: Checks if the answer is *factually consistent with the retrieved context*, helping identify hallucination.
+*   **Faithfulness**: Checks if the answer is *factually consistent with the retrieved context*.
 *   **Answer Relevance**: Measures how well the *answer addresses the input question*.
 *   **Semantic Similarity**: Assesses *content overlap* between the generated and reference answers.
 *   **Answer Correctness**: Overall judgment of *accuracy*, considering factual content and semantic alignment.
